@@ -16,9 +16,7 @@ app.get('/new/:url', function (req, res) {
     var collection = db.collection('url');
     collection.insert(doc, function(err, data) {
       if (err) throw err;
-      //console.log(input+doc._id);
       console.log(JSON.stringify(doc));
-      //res.json(doc);
       res.json({
         'orginalurl': doc.url,
         'shortened': 'URL/'+doc._id
